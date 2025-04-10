@@ -1,6 +1,6 @@
 import { useRef, forwardRef, useImperativeHandle } from "react";
 
-const Input = forwardRef(({ handleClick, saveProjects }, ref) => {
+const Input = forwardRef(({ handleClick, handleHome, saveProjects }, ref) => {
      const titleRef = useRef(null);
      const contentRef = useRef(null);
      const dateRef = useRef(null);
@@ -14,7 +14,7 @@ const Input = forwardRef(({ handleClick, saveProjects }, ref) => {
      return (
           <div className="w-[90%]">
                <div className="flex justify-end gap-4">
-                    <button onClick={handleClick} className="cursor-pointer">
+                    <button onClick={handleHome} className="cursor-pointer">
                          Cancel
                     </button>
                     <button
