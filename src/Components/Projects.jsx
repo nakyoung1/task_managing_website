@@ -1,4 +1,4 @@
-function Projects({ projects, handleClick, handleShowProject }) {
+function Projects({ projects, handleClick, handleHome, handleShowProject }) {
      return (
           <nav className="flex flex-col items-center gap-7 bg-gray-700 rounded-tr-lg h-[100vh] w-[300px] m text-white  ">
                <h3

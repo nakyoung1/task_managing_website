@@ -56,6 +56,7 @@ function App() {
           <div className="flex gap-4 mt-9">
                <Projects
                     projects={projects}
+                    handleHome={handleHome}
                     handleClick={handleClick}
                     handleShowProject={handleShowProject}
                />
