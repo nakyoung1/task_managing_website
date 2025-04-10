@@ -6,6 +6,7 @@ function Coments() {
 
      const handleAddComent = () => {
           const newComent = comentRef.current.value;
+          if (newComent === "") return;
           setComents((prev) => [...prev, newComent]);
           comentRef.current.value = "";
           console.log(tasks);
