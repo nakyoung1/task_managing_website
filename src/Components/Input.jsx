@@ -12,7 +12,7 @@ const Input = forwardRef(({ handleClick, handleHome, saveProjects }, ref) => {
      }));
 
      return (
-          <div className="w-[90%]">
+          <div className="w-[90%] max-w-[600px] fixed left-[350px]">
                <div className="flex justify-end gap-4">
                     <button onClick={handleHome} className="cursor-pointer">
                          Cancel
