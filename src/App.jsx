@@ -30,8 +30,12 @@ function App() {
                description: inputRef.current.contentRef.current.value,
                date: inputRef.current.dateRef.current.value,
           };
-          setProjects((prev) => [...prev, newProject]);
-          setIsClicked(true);
+          if (newProject.title === "") {
+               alert("제목을 입력해주세요.");
+          } else {
+               setProjects((prev) => [...prev, newProject]);
+               setIsClicked(true);
+          }
      };
 
      const deleteProject = (projectId) => {
