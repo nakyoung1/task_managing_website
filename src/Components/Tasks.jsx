@@ -3,7 +3,7 @@ import Coments from "../Components/Coments";
 
 function Tasks({ selectedProject, deleteProject }) {
      return (
-          <div className="fixed left-[350px] w-[100%] max-w-[600px] p-3 ">
+          <div className="w-[100%] max-w-[600px] p-3 ">
                <header className="mb-4 border-b-2 border-gray-200">
                     <div className=" flex justify-between mb-5">
                          <section className="flex flex-col items-start gap-3">

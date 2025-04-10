@@ -6,10 +6,17 @@ import Home from "./Components/Home";
 
 function App() {
      const [isClicked, setIsClicked] = useState(true);
-     const [projects, setProjects] = useState([]);
+     const [projects, setProjects] = useState(() => {
+          const savedProjects = localStorage.getItem("projects");
+          return savedProjects ? JSON.parse(savedProjects) : [];
+     });
      const [selectedProject, setSelectedProject] = useState(null);
 
      const inputRef = useRef();
+
+     useEffect(() => {
+          localStorage.setItem("projects", JSON.stringify(projects));
+     }, [projects]);
 
      const handleClick = () => {
           setIsClicked(false);
