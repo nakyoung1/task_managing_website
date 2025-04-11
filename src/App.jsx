@@ -3,6 +3,8 @@ import Input from "./Components/Input";
 import Projects from "./Components/Projects";
 import Tasks from "./Components/Tasks";
 import Home from "./Components/Home";
+import ThemeButton from "./Components/ThemeButton";
+import { ThemeProvider } from "./Components/ThemeProvider";
 
 function App() {
      const [isClicked, setIsClicked] = useState(true);
@@ -53,33 +55,40 @@ function App() {
      };
 
      return (
-          <div className="flex gap-4 mt-9">
-               <Projects
-                    projects={projects}
-                    handleHome={handleHome}
-                    handleClick={handleClick}
-                    handleShowProject={handleShowProject}
-               />
-
-               <main className="flex flex-col items-center gap-5 mt-15 w-2/3 text-center">
-                    {isClicked === true && <Home handleClick={handleClick} />}
-
-                    {isClicked === false && (
-                         <Input
-                              handleClick={handleClick}
+          <ThemeProvider>
+               <div>
+                    <ThemeButton />
+                    <div className="flex gap-4 pt-15 dark:bg-gray-800">
+                         <Projects
+                              projects={projects}
                               handleHome={handleHome}
-                              ref={inputRef}
-                              saveProjects={saveProjects}
+                              handleClick={handleClick}
+                              handleShowProject={handleShowProject}
                          />
-                    )}
-                    {isClicked === null && (
-                         <Tasks
-                              selectedProject={selectedProject}
-                              deleteProject={deleteProject}
-                         />
-                    )}
-               </main>
-          </div>
+
+                         <main className="flex flex-col items-center gap-5 mt-15 w-2/3 text-center">
+                              {isClicked === true && (
+                                   <Home handleClick={handleClick} />
+                              )}
+
+                              {isClicked === false && (
+                                   <Input
+                                        handleClick={handleClick}
+                                        handleHome={handleHome}
+                                        ref={inputRef}
+                                        saveProjects={saveProjects}
+                                   />
+                              )}
+                              {isClicked === null && (
+                                   <Tasks
+                                        selectedProject={selectedProject}
+                                        deleteProject={deleteProject}
+                                   />
+                              )}
+                         </main>
+                    </div>
+               </div>
+          </ThemeProvider>
      );
 }
 

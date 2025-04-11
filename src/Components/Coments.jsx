@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 
 function Coments() {
      const [coments, setComents] = useState([]);
@@ -9,7 +9,6 @@ function Coments() {
           if (newComent === "") return;
           setComents((prev) => [...prev, newComent]);
           comentRef.current.value = "";
-          console.log(tasks);
      };
 
      const deleteComent = (comentsIndex) => {
@@ -19,7 +18,9 @@ function Coments() {
      };
      return (
           <div className="w-[100%] flex flex-col items-start gap-5">
-               <label className="w-[100%] text-start  ">Tasks</label>
+               <label className="w-[100%] text-start dark:text-white  ">
+                    Tasks
+               </label>
                <section className="flex flex-col w-[100%]">
                     <div className="flex justify-center items-center">
                          <input
@@ -29,7 +30,7 @@ function Coments() {
                          />
                          <button
                               onClick={handleAddComent}
-                              className="w-[25%] cursor-pointer"
+                              className="w-[25%] cursor-pointer dark:text-white"
                          >
                               Add Task
                          </button>

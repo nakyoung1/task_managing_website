@@ -7,21 +7,21 @@ function Tasks({ selectedProject, deleteProject }) {
                <header className="mb-4 border-b-2 border-gray-200">
                     <div className=" flex justify-between mb-5">
                          <section className="flex flex-col items-start gap-3">
-                              <h1 className="font-bold text-2xl">
+                              <h1 className="font-bold text-2xl dark:text-white">
                                    {selectedProject.title}
                               </h1>
-                              <h6 className="text-xl">
+                              <h6 className="text-xl dark:text-white">
                                    {selectedProject.date}
                               </h6>
                          </section>
                          <button
                               onClick={() => deleteProject(selectedProject.id)}
-                              className="cursor-pointer"
+                              className="cursor-pointer dark:text-white"
                          >
                               Delete
                          </button>
                     </div>
-                    <article className="mb-3 text-start">
+                    <article className="mb-3 text-start dark:text-white">
                          {selectedProject.description}
                     </article>
                </header>
